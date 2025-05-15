@@ -19,14 +19,14 @@ Das Repository ist in verschiedene Ordner unterteilt, die die verschiedenen Phas
 In diesen Dateien wird der Fortschritt und die Dokumentation jeder Woche festgehalten.
 
 ### [02 - WordPress](m158_lb2/02%20-%20WordPress/)
-- [Backup](m158_lb2/02%20-%20WordPress/Backup/): Enthält das vollständige WordPress-Backup vom alten Server.
-- [Application](m158_lb2/02%20-%20WordPress/Application/): Die Dateien der WordPress-Anwendung, die auf den neuen Server migriert werden sollen.
-- [Config](m158_lb2/02%20-%20WordPress/Config/): Konfigurationsdateien, die für die Einrichtung des neuen Servers notwendig sind.
+- [Backup](m158_lb2/02%20-%20WordPress/Backup.md): Enthält das vollständige WordPress-Backup vom alten Server.
+- [Application](m158_lb2/02%20-%20WordPress/Application.md): Die Dateien der WordPress-Anwendung, die auf den neuen Server migriert werden sollen.
+- [Config](m158_lb2/02%20-%20WordPress/Config.md): Konfigurationsdateien, die für die Einrichtung des neuen Servers notwendig sind.
 
 ### [03 - Diverses](m158_lb2/03%20-%20Diverses/)
-- [Vorlage Bewertungsraster](m158_lb2/03%20-%20Diverses/Vorlage%20Bewertungsraster.xlsx): Eine Excel-Datei zur Bewertung des Projekts.
-- [Logins](m158_lb2/03%20-%20Diverses/Logins.txt): Informationen zu den Zugangsdaten (z. B. FTP-Zugang).
-- [Links](m158_lb2/03%20-%20Diverses/Links.md): Links zu relevanten Ressourcen oder Dokumentationen.
+- [Vorlage Bewertungsraster](m158_lb2/03%20-%20Diverses/Vorlage-Bewertungsraster.md): Eine Excel-Datei zur Bewertung des Projekts.
+- [Logins](m158_lb2/03%20-%20Diverses/Logins.md): Informationen zu den Zugangsdaten (z. B. FTP-Zugang).
+- [Links](m158_lb2/03%20-%2Diverses/Links.md): Links zu relevanten Ressourcen oder Dokumentationen.
 
 ## Ablauf der Migration
 
