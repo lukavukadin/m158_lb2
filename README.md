@@ -11,22 +11,22 @@ Die Aufgabe besteht darin, eine bestehende WordPress-Anwendung (https://m158.gee
 Das Repository ist in verschiedene Ordner unterteilt, die die verschiedenen Phasen und Komponenten des Projekts enthalten:
 
 ### [01 - Dokumentation](m158_lb2/01%20-%20Dokumentation/)
-- [Woche-1.md](m158_lb2/01%20-%20Dokumentation/Woche-1.md)
-- [Woche-2.md](m158_lb2/01%20-%20Dokumentation/Woche-2.md)
-- [Woche-3.md](m158_lb2/01%20-%20Dokumentation/Woche-3.md)
+- [Woche-1.md](01%20-%20Dokumentation/Woche-1.md)
+- [Woche-2.md](01%20-%20Dokumentation/Woche-2.md)
+- [Woche-3.md](01%20-%20Dokumentation/Woche-3.md)
 - etc.
 
 In diesen Dateien wird der Fortschritt und die Dokumentation jeder Woche festgehalten.
 
 ### [02 - WordPress](m158_lb2/02%20-%20WordPress/)
-- [Backup](m158_lb2/02%20-%20WordPress/Backup.md): Enthält das vollständige WordPress-Backup vom alten Server.
-- [Application](m158_lb2/02%20-%20WordPress/Application.md): Die Dateien der WordPress-Anwendung, die auf den neuen Server migriert werden sollen.
-- [Config](m158_lb2/02%20-%20WordPress/Config.md): Konfigurationsdateien, die für die Einrichtung des neuen Servers notwendig sind.
+- [Backup](02%20-%20WordPress/Backup.md): Enthält das vollständige WordPress-Backup vom alten Server.
+- [Application](02%20-%20WordPress/Application.md): Die Dateien der WordPress-Anwendung, die auf den neuen Server migriert werden sollen.
+- [Config](02%20-%20WordPress/Config.md): Konfigurationsdateien, die für die Einrichtung des neuen Servers notwendig sind.
 
 ### [03 - Diverses](m158_lb2/03%20-%20Diverses/)
-- [Vorlage Bewertungsraster](m158_lb2/03%20-%20Diverses/Vorlage-Bewertungsraster.md): Eine Excel-Datei zur Bewertung des Projekts.
-- [Logins](m158_lb2/03%20-%20Diverses/Logins.md): Informationen zu den Zugangsdaten (z. B. FTP-Zugang).
-- [Links](m158_lb2/03%20-%2Diverses/Links.md): Links zu relevanten Ressourcen oder Dokumentationen.
+- [Vorlage Bewertungsraster](03%20-%20Diverses/Vorlage-Bewertungsraster.md): Eine Excel-Datei zur Bewertung des Projekts.
+- [Logins](03%20-%20Diverses/Logins.md): Informationen zu den Zugangsdaten (z. B. FTP-Zugang).
+- [Links](03%20-%2Diverses/Links.md): Links zu relevanten Ressourcen oder Dokumentationen.
 
 ## Ablauf der Migration
 
