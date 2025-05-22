@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - Dokumentation/Woche-2.md",
+                "file": "01 - Dokumentation/Woche-3.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Woche-2"
+              "title": "Woche-3"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - Dokumentation/Woche-2.md",
+                "file": "01 - Dokumentation/cloud-modelle-analyse.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Rückverweise für Woche-2"
+              "title": "Rückverweise für cloud-modelle-analyse"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - Dokumentation/Woche-2.md",
+                "file": "01 - Dokumentation/cloud-modelle-analyse.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Ausgehende Links von Woche-2 öffnen"
+              "title": "Ausgehende Links von cloud-modelle-analyse öffnen"
             }
           },
           {
@@ -142,20 +142,31 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - Dokumentation/Woche-2.md",
+                "file": "01 - Dokumentation/cloud-modelle-analyse.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Gliederung von Woche-2"
+              "title": "Gliederung von cloud-modelle-analyse"
+            }
+          },
+          {
+            "id": "5e7ff4a540937347",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -165,14 +176,16 @@
       "canvas:Neuen Canvas erstellen": false,
       "daily-notes:Heutige Notiz öffnen": false,
       "templates:Vorlage einfügen": false,
-      "command-palette:Befehlspalette öffnen": false
+      "command-palette:Befehlspalette öffnen": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "4f2cb79b33454185",
   "lastOpenFiles": [
-    "01 - Dokumentation/Woche-3.md",
+    "01 - Dokumentation/Woche-4.md",
     "01 - Dokumentation/mermaidchart.md",
-    "01 - Dokumentation/Woche-2.md",
+    "01 - Dokumentation/Woche-3.md",
+    "01 - Dokumentation/cloud-modelle-analyse.md",
     "02 - WordPress/Application.md",
     "03 - Diverses/Links.md",
     "03 - Diverses/Logins.md",
