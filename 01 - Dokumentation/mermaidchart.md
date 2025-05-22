@@ -1,1 +1,71 @@
-[![](https://mermaid.ink/img/pako:eNqFVVFv2jAQ_iuWpU6bREpiSELy1sKqdhsbGtuqTryY5AIeiY1sp9Ah_vvsJLSkFM1Pdu67-7475847nIgUcIwXlGs948gszXQOaCLFH1jpdU45mopMb6gEZ8wWkmomOPpyTWp0SjXcCFlQjdBo5IzHzoNZtQ22SV6moOx-A7ACnqoZr20KkirQR643LFnlJV-gd2hi6MyuhhxJsNbDiqnXQZ7vuL5DXOKb_abGj8SqLIDrSmH3kyglp7nFkzY-2rwW8bNYwNxyPAo5BwlMQ4O4up86U9DlGrVWPDcaCDnVMOV0rZZCI6-NL1gOSgsOHTQ3ckj04uqmr-U4joPeX5VZRpdSf7DH2v4ZmNHKNUjJkqU-xhwTwNb7H8MdzyRVWpYrXcra9G3qfBY8Y4uyueJGeWKCmUhucC5TcjbTxBaevLhaHRZzD3MF8hFkd3R97Jr02vgTqt55qr6BR6dUv5xboTTqotFXe5GWtKby2_gTqv55qsBUN2hTtav73CZNuhPnxrqbbLvDqsR1zNRrBzrR4J_VkJrKuj3HDc9q-GGgrOqpq7lKlnmpVNMlzNRAQQVQR9HBa4d8VmOaAd0CzfUSDZeQrA54cgZ_UB-cVQ_2nt22eosZ3nWHI6N4BOtcPNlWrl0zr41_afhkZe7zdX_GGXkb3wwUeijIG9IyKy1sS8MdvJAsxbHpF-jgAsy0s0e8s2FnWC-hgBmOzTalcjXDnfp7PVPN911NP8N0y1Q9LGv4RepcFM7FQ-NiITlkekLT1NydxRDffTbNqRwKyUF-pykrlTW71rZv-DQrIGccWpRKU9mw2YzsUPD8Iz4zk4-toeOFM1xFnfG9yXxN-W8hikPyUpSLJY4zmitzKtd2_I8YNf_7C8SEBKO05BrHfbcKgeMd3uK4F14GPZd4A9f13cCLBh38hOMwuow8QoJwEJB-QKL-voP_Vpzu5WDgkz5x-_2I-MEgCjsYUqaFHNfPVvV67f8B9SrhPQ?type=png)](https://mermaid.live/edit#pako:eNqFVVFv2jAQ_iuWpU6bREpiSELy1sKqdhsbGtuqTryY5AIeiY1sp9Ah_vvsJLSkFM1Pdu67-7475847nIgUcIwXlGs948gszXQOaCLFH1jpdU45mopMb6gEZ8wWkmomOPpyTWp0SjXcCFlQjdBo5IzHzoNZtQ22SV6moOx-A7ACnqoZr20KkirQR643LFnlJV-gd2hi6MyuhhxJsNbDiqnXQZ7vuL5DXOKb_abGj8SqLIDrSmH3kyglp7nFkzY-2rwW8bNYwNxyPAo5BwlMQ4O4up86U9DlGrVWPDcaCDnVMOV0rZZCI6-NL1gOSgsOHTQ3ckj04uqmr-U4joPeX5VZRpdSf7DH2v4ZmNHKNUjJkqU-xhwTwNb7H8MdzyRVWpYrXcra9G3qfBY8Y4uyueJGeWKCmUhucC5TcjbTxBaevLhaHRZzD3MF8hFkd3R97Jr02vgTqt55qr6BR6dUv5xboTTqotFXe5GWtKby2_gTqv55qsBUN2hTtav73CZNuhPnxrqbbLvDqsR1zNRrBzrR4J_VkJrKuj3HDc9q-GGgrOqpq7lKlnmpVNMlzNRAQQVQR9HBa4d8VmOaAd0CzfUSDZeQrA54cgZ_UB-cVQ_2nt22eosZ3nWHI6N4BOtcPNlWrl0zr41_afhkZe7zdX_GGXkb3wwUeijIG9IyKy1sS8MdvJAsxbHpF-jgAsy0s0e8s2FnWC-hgBmOzTalcjXDnfp7PVPN911NP8N0y1Q9LGv4RepcFM7FQ-NiITlkekLT1NydxRDffTbNqRwKyUF-pykrlTW71rZv-DQrIGccWpRKU9mw2YzsUPD8Iz4zk4-toeOFM1xFnfG9yXxN-W8hikPyUpSLJY4zmitzKtd2_I8YNf_7C8SEBKO05BrHfbcKgeMd3uK4F14GPZd4A9f13cCLBh38hOMwuow8QoJwEJB-QKL-voP_Vpzu5WDgkz5x-_2I-MEgCjsYUqaFHNfPVvV67f8B9SrhPQ)
+```mermaid
+gantt
+
+    title Projektplan Software-Migration LB2
+
+    dateFormat  DD-MM-YYYY
+
+    excludes    weekends
+
+  
+
+    section Entwicklung & Planung
+
+    Projektplanung         :a1, 15-05-2025, 1w
+
+    Dokumentation/Journal  :a2, 15-05-2025, 9w
+
+  
+
+    section Umgebung vorbereiten
+
+    AWS-Setup              :b1, 22-05-2025, 1w
+
+    Snapshot 1             :milestone, b2, 29-05-2025, 0d
+
+  
+
+    section --- (Auffahrt) ---
+
+    Kein Unterricht (Auffahrt) :milestone, ex1, 29-05-2025, 0d
+
+  
+
+    section Infrastruktur
+
+    OS-Konfiguration       :c1, 05-06-2025, 1w
+
+    Snapshot 2             :milestone, c2, 12-06-2025, 0d
+
+    Webserver/DB           :c3, 12-06-2025, 1w
+
+    Snapshot 3             :milestone, c4, 19-06-2025, 0d
+
+    V-Host / DNS-Server    :c5, 19-06-2025, 1w
+
+    Snapshot 4             :milestone, c6, 26-06-2025, 0d
+
+  
+
+    section Migration
+
+    WP-Files/DB/Config     :d1, 26-06-2025, 1w
+
+    Snapshot 5             :milestone, d2, 03-07-2025, 0d
+
+  
+
+    section Testing & Abschluss
+
+    Diverse Tests          :e1, 03-07-2025, 1w
+
+    Site Health Check      :e2, 03-07-2025, 1w
+
+    Snapshot 6             :milestone, e3, 10-07-2025, 0d
+
+    CI/CD & Deployment     :f1, 10-07-2025, 1w
+
+    Docker Setup           :f2, 10-07-2025, 1w
+
+    Projektabschluss       :milestone, f3, 17-07-2025, 0d
+```

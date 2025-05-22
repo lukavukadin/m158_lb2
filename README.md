@@ -13,7 +13,7 @@ Das Repository ist in verschiedene Ordner unterteilt, die die verschiedenen Phas
 ### [01 - Dokumentation](m158_lb2/01%20-%20Dokumentation/)
 - [Woche-1.md](01%20-%20Dokumentation/Woche-1.md)
 - [Woche-2.md](cloud-modelle-analyse.md)
-- [Woche-3.md](01%20-%20Dokumentation/Woche-3.md)
+- [Woche-3.md](mermaidchart.md)
 - etc.
 
 In diesen Dateien wird der Fortschritt und die Dokumentation jeder Woche festgehalten.
