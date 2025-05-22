@@ -2,13 +2,8 @@
 
 ## Aufgabenstellung:
 
-Analysieren Sie die beiden Diagramme zu IaaS, PaaS und SaaS und vergleichen Sie deren Inhalte. Achten Sie dabei auf Unterschiede in der Darstellung und Perspektive. Versuchen Sie, eine sinnvolle Interpretation der beiden Grafiken zu erarbeiten und Verknüpfungen zwischen ihnen herzustellen.
-
-
-## Aufgabenstellung:
-
-
 Die beiden Grafiken zeigen, wie sich die Verantwortlichkeiten und Aufgaben bei verschiedenen IT-Betriebsmodellen – On-Premises, IaaS, PaaS und SaaS – unterscheiden. Obwohl beide das gleiche Thema behandeln, setzen sie unterschiedliche Schwerpunkte und erklären aus verschiedenen Perspektiven, wer für was verantwortlich ist.
+
 
 ## Gemeinsamkeiten der Grafiken
 
