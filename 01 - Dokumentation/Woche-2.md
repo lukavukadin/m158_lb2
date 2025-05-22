@@ -65,3 +65,4 @@ Man kann die beiden Grafiken gut kombinieren:
 Beispiel: In PaaS verwaltet man laut Grafik 1 nur noch Anwendungen und Daten selbst. Grafik 2 zeigt zusätzlich: Beim Thema Identitätsmanagement teilt man sich die Verantwortung mit dem Anbieter.
 
 
+jakljdslökfajsdf
