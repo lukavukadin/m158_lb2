@@ -39,18 +39,23 @@ Dateien:
 - **Ordner 2** (innerhalb `htdocs`): `wp-content/plugins/neon/files/download.php`
 
 1. Wie ist der lokale & absolute Pfad auf `Dokument.pdf`?
+
 	**lokale:** `/srv/var/www/htdocs/wp-content/uploads/2022/5/Dokument.pdf`
     **Absolute:** `https://ihreadresse.ch/wp-content/uploads/2022/5/Dokument.pdf`
     
 2. Wie ist der lokale & absolute Pfad auf `download.php`?
+
     **lokale:** `/srv/var/www/htdocs/wp-content/plugins/neon/files/download.php
     **Absolute:**`https://ihreadresse.ch/wp-content/plugins/neon/files/download.php
     
 3. Wie lautet die URL von `Dokument.pdf`?
+
 	`https://ihreadresse.ch/wp-content/uploads/2022/5/Dokument.pdf`
 	
 4. Wie ist die URL von `download.php`?
+
 	`https://ihreadresse.ch/wp-content/plugins/neon/files/download.php`
 
 5. Sie möchten in der Datei `download.php` einen Link auf das `Dokument.pdf` herstellen. Wie lautet der relative Pfad?
+
 	`../../../uploads/2022/5/Dokument.pdf`

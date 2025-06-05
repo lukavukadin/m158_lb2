@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "01-Aufgaben/Übung-Pfade.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Übung-Pfade"
             }
           }
         ]
@@ -182,8 +182,8 @@
   },
   "active": "8776a3daea2671ae",
   "lastOpenFiles": [
-    "01 - Aufgaben.md",
     "README.md",
+    "01 - Aufgaben.md",
     "01-Aufgaben/Übung-Pfade.md",
     "01-Aufgaben/mermaidchart.md",
     "01-Aufgaben/cloud-modelle-analyse.md",
