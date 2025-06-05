@@ -40,13 +40,13 @@ Dateien:
 
 1. Wie ist der lokale & absolute Pfad auf `Dokument.pdf`?
 
-	**lokale:** `/srv/var/www/htdocs/wp-content/uploads/2022/5/Dokument.pdf`
-    **Absolute:** `https://ihreadresse.ch/wp-content/uploads/2022/5/Dokument.pdf`
+	- **lokale:** `/srv/var/www/htdocs/wp-content/uploads/2022/5/Dokument.pdf`
+    - **Absolute:** `https://ihreadresse.ch/wp-content/uploads/2022/5/Dokument.pdf`
     
 2. Wie ist der lokale & absolute Pfad auf `download.php`?
 
-    **lokale:** `/srv/var/www/htdocs/wp-content/plugins/neon/files/download.php`
-    **Absolute:** `https://ihreadresse.ch/wp-content/plugins/neon/files/download.php
+    - **lokale:** `/srv/var/www/htdocs/wp-content/plugins/neon/files/download.php`
+    - **Absolute:** `https://ihreadresse.ch/wp-content/plugins/neon/files/download.php
     
 3. Wie lautet die URL von `Dokument.pdf`?
 
