@@ -10,11 +10,10 @@ Die Aufgabe besteht darin, eine bestehende WordPress-Anwendung (https://m158.gee
 
 Das Repository ist in verschiedene Ordner unterteilt, die die verschiedenen Phasen und Komponenten des Projekts enthalten:
 
-### [01 - Dokumentation](m158_lb2/01%20-%20Dokumentation/)
-- [Woche-1.md](01%20-%20Dokumentation/Woche-1.md)
-- [Woche-2.md](cloud-modelle-analyse.md)
-- [Woche-3.md](mermaidchart.md)
-- etc.
+### [01 - Aufgaben](m158_lb2/01%20-%20Aufgaben/)
+- [cloud-modelle-analyse.md](01%20-%20Aufgaben/cloud-modelle-analyse.md)
+- [mermaidchart.md](01%20-%20Aufgaben/mermaidchart.md)
+- [Übung Pfade.md](01%20-%20Aufgaben/Übung%20Pfade.md)
 
 In diesen Dateien wird der Fortschritt und die Dokumentation jeder Woche festgehalten.
 

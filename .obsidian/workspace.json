@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "353201f243695c58",
+        "id": "393e2466d6f2f188",
         "type": "tabs",
         "children": [
           {
-            "id": "4f2cb79b33454185",
+            "id": "8776a3daea2671ae",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - Dokumentation/mermaidchart.md",
-                "mode": "preview",
+                "file": "README.md",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mermaidchart"
+              "title": "README"
             }
           }
         ]
@@ -180,15 +180,22 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "4f2cb79b33454185",
+  "active": "8776a3daea2671ae",
   "lastOpenFiles": [
-    "01 - Dokumentation/löschen.md",
-    "01 - Dokumentation/mermaidchart.md",
-    "01 - Dokumentation/Woche-4.md",
-    "01 - Dokumentation/cloud-modelle-analyse.md",
-    "02 - WordPress/Application.md",
-    "03 - Diverses/Links.md",
+    "01 - Aufgaben/cloud-modelle-analyse.md",
+    "README.md",
+    "m158_lb2/01 - Aufgaben 2.md",
+    "m158_lb2/01 - Aufgaben.md",
+    "m158_lb2/01 - Aufgaben 1.md",
+    "m158_lb2/01 - Dokumentation.md",
+    "01 - Aufgaben/Übung Pfade.md",
+    "01 - Aufgaben/mermaidchart.md",
+    "02 - WordPress/Config.md",
     "03 - Diverses/Logins.md",
-    "03 - Diverses/Vorlage-Bewertungsraster.md"
+    "03 - Diverses/Links.md",
+    "02 - WordPress/Application.md",
+    "03 - Diverses/Vorlage-Bewertungsraster.md",
+    "m158_lb2",
+    "01 - Dokumentation/löschen.md"
   ]
 }
