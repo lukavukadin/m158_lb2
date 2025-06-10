@@ -15,7 +15,7 @@ Das Repository ist in verschiedene Ordner unterteilt, die die verschiedenen Phas
 - [mermaidchart.md](mermaidchart.md)
 - [Übung Pfade.md](Übung-Pfade.md)
 
-In diesen Dateien wird der Fortschritt und die Dokumentation jeder Woche festgehalten.
+In diesen Dateien werden die Aufgaben jeder Woche festgehalten.
 
 ### [02 - WordPress](m158_lb2/02%20-%20WordPress/)
 - [Backup](Backup.md): Enthält das vollständige WordPress-Backup vom alten Server.
