@@ -43,7 +43,7 @@
               "state": {
                 "file": "03-Umsetzung/AWS-Umgebung.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "AWS-Umgebung"
