@@ -20,13 +20,17 @@ Das Repository ist in verschiedene Ordner unterteilt, die die verschiedenen Phas
 - [Mermaidchart](mermaidchart.md)
 - [Architektursdiagramm](Architektursdiagramm.md)
 
-### [03 - WordPress](03-WordPress/)
+### [03 - Umsetzung](03-Umsetzung.md)
+
+-  [AWS Umgebung](AWS-Umgebung.md)
+
+### [04 - WordPress](04-WordPress/)
 
 - [Backup](Backup.md): Enthält das vollständige WordPress-Backup vom alten Server.
 - [Application](Application.md): Die Dateien der WordPress-Anwendung, die auf den neuen Server migriert werden sollen.
 - [Config](Config.md): Konfigurationsdateien, die für die Einrichtung des neuen Servers notwendig sind.
 
-### [03 - Diverses](04-Diverses/)
+### [05 - Diverses](05-Diverses/)
 
 - [Vorlage Bewertungsraster](Vorlage-Bewertungsraster.md): Eine Excel-Datei zur Bewertung des Projekts.
 - [Logins](Logins.md): Informationen zu den Zugangsdaten (z. B. FTP-Zugang).
