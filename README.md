@@ -15,7 +15,6 @@ Das Repository ist in verschiedene Ordner unterteilt, die die verschiedenen Phas
 - [Cloud Modelle Analyse](cloud-modelle-analyse.md)
 - [Absolute und relative Pfade](Übung-Pfade.md)
 
-
 ### [02 - Planung](02-Planung/)
 
 - [Mermaidchart](mermaidchart.md)
