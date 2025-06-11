@@ -1,4 +1,4 @@
-## Übung Pfade
+## Absolute und relative Pfade
 
 ### Lokal
 
