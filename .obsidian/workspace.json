@@ -166,8 +166,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 1044.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,17 +179,17 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ea8da44dc4bea530",
+  "active": "b6bda002dcaa1fb0",
   "lastOpenFiles": [
-    "Unbenannt.canvas",
+    "01-Aufgaben/cloud-modelle-analyse.md",
+    "01-Aufgaben/Übung-Pfade.md",
     "README.md",
+    "Unbenannt.canvas",
     "02-Planung/Architektursdiagramm.md",
     "03-Diverses/Vorlage-Bewertungsraster.md",
     "02-Planung",
     "Bilder/Internet.png",
-    "01-Aufgaben/cloud-modelle-analyse.md",
     "02-Planung/mermaidchart.md",
-    "01-Aufgaben/Übung-Pfade.md",
     "02-WordPress/Application.md",
     "02-WordPress/Backup.md",
     "02-WordPress/Config.md",
