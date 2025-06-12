@@ -62,23 +62,26 @@ sudo apt update
 sudo apt install apache2 php php-mysql unzip mysql-client
 ```
 
-➡️ Screenshot hinzufügen: SSH-Verbindung & Apache Installation
+
+<img width="70%" alt="VPC" src= "Screenshot 2025-06-11 105919 1.png" />
+![[Screenshot 2025-06-11 110037.png]]
+
 
 ---
 
 ## 🌐 Website-Funktionstest
 
 - `info.php` erstellt unter `/var/www/html/info.php`
-    
+
+![[Screenshot 2025-06-11 110501.png]]
 
 ```php
 <?php phpinfo(); ?>
 ```
 
-- **Erreichbar über IP:** http://
-    
+- **Erreichbar über IP:** http://44.223.105.157
 
-➡️ Screenshot hinzufügen: PHP Info Page
+![[Screenshot 2025-06-11 110531 1.png]]
 
 ---
 
@@ -91,7 +94,9 @@ sudo apt install apache2 php php-mysql unzip mysql-client
 - **Security Group für RDS:** Erlaubt Zugriff von EC2-SG (Port 3306)
     
 - **Public Access:** Nein (nur intern über VPC erreichbar)
-    
+
+![[Screenshot 2025-06-11 131247.png]]
+![[Screenshot 2025-06-11 133242 1.png]]
 
 **Zugriff vom Webserver:**
 
@@ -99,9 +104,17 @@ sudo apt install apache2 php php-mysql unzip mysql-client
 mysql -h <RDS-ENDPOINT> -u admin -p
 ```
 
-➡️ _Screenshot hinzufügen: RDS Konfiguration, Subnet Group & Connection_
+![[Screenshot 2025-06-11 133601.png]]
+
 
 ---
+
+## Neue Datenbank erstellen
+
+- Datenbank erstellt:
+
+![[Screenshot 2025-06-11 133818.png]]
+<img width="20%" alt="" src= "Screenshot 2025-06-11 133837.png" />
 
 ## 📆 FTP-Backup via FileZilla & SCP
 
