@@ -51,12 +51,14 @@
             "id": "fc8771e98a3cfccb",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Bilder/Internet (2).png"
+                "file": "02-Planung/Architektursdiagramm.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Internet (2)"
+              "icon": "lucide-file",
+              "title": "Architektursdiagramm"
             }
           }
         ],
@@ -220,16 +222,16 @@
   },
   "active": "fc8771e98a3cfccb",
   "lastOpenFiles": [
-    "Bilder/Internet (2) 1.png",
-    "Bilder/Internet (2).png",
-    "02-Planung/Architektursdiagramm.md",
     "02-Planung/mermaidchart.md",
+    "03-Umsetzung/AWS-Umgebung.md",
+    "Bilder/Internet (2).png",
     "README.md",
+    "02-Planung/Architektursdiagramm.md",
+    "Bilder/Internet (2) 1.png",
     "Bilder/Screenshot 2025-06-11 110501.png",
     "Bilder/Screenshot 2025-06-11 110037.png",
     "05-Diverses/Logins.md",
     "01-Aufgaben/Übung-Pfade.md",
-    "03-Umsetzung/AWS-Umgebung.md",
     "Bilder/Screenshot 2025-06-11 133837.png",
     "Bilder/Screenshot 2025-06-11 133818.png",
     "Bilder/Screenshot 2025-06-11 133601.png",

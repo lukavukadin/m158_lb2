@@ -1,5 +1,5 @@
 ## Architektur Diagramm
 
-Hier sieht man wie ich mir die Umsetzung auf AWS vorstelle
+Hier sieht man wie ich mir die Umsetzung auf AWS vorstelle:
 
-![[Internet (2) 1.png]]
+![Alt-Text](Internet%20(2)%201.png)
