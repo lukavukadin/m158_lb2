@@ -53,12 +53,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02-Planung/mermaidchart.md",
+                "file": "03-Umsetzung/AWS-Umgebung.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "mermaidchart"
+              "title": "AWS-Umgebung"
             }
           }
         ],
@@ -207,7 +207,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 326.5
+    "width": 267.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,8 +222,8 @@
   },
   "active": "fc8771e98a3cfccb",
   "lastOpenFiles": [
-    "02-Planung/Architektursdiagramm.md",
     "02-Planung/mermaidchart.md",
+    "02-Planung/Architektursdiagramm.md",
     "03-Umsetzung/AWS-Umgebung.md",
     "Bilder/Internet (2).png",
     "README.md",

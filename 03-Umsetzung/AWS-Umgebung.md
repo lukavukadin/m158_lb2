@@ -1,4 +1,4 @@
-# 📄 Projektdokumentation: Webserver- und Datenbankbereitstellung auf AWS
+# 📄 Webserver- und Datenbankbereitstellung auf AWS
 
 ---
 
@@ -119,18 +119,17 @@ mysql -h <RDS-ENDPOINT> -u admin -p
 ## 📆 FTP-Backup via FileZilla & SCP
 
 - **FTP-Adresse:** `m158.geekz.ch`
-    
+
 - **Datei heruntergeladen:** `2025-03-11_09-23-30_F5CZ3MQX01.zip`
-    
+
 - **Transfer zur EC2:**
-    
+
 
 ```bash
 scp -i ~/.ssh/vuk-webserver-key.pem ~/Downloads/2025-*.zip ubuntu@<EC2-IP>:/home/ubuntu
 ```
 
 - **Entpacken:**
-    
 
 ```bash
 unzip *.zip
