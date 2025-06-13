@@ -22,8 +22,8 @@ Das Repository ist in verschiedene Ordner unterteilt, die die verschiedenen Phas
 
 ### [03 - Umsetzung](03-Umsetzung.md)
 
--  [AWS Umgebung](AWS-Umgebung.md)
-
+-  [AWS Umgebung](AWS-Umsetzung.md)
+- [Docker Umgebung](Docker-Umsetzung.md)
 ### [04 - WordPress](04-WordPress/)
 
 - [Backup](Backup.md): Enthält das vollständige WordPress-Backup vom alten Server.

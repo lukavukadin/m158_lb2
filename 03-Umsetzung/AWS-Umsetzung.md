@@ -109,12 +109,28 @@ mysql -h <RDS-ENDPOINT> -u admin -p
 
 ---
 
-## Neue Datenbank erstellen
+## Neue Datenbank erstellt
 
 - Datenbank erstellt:
 
 ![[Screenshot 2025-06-11 133818.png]]
 <img width="20%" alt="" src= "Screenshot 2025-06-11 133837.png" />
+
+- Wordpress heruntergeladen:
+![[Screenshot 2025-06-11 133925.png]]
+
+
+![[Screenshot 2025-06-11 134204.png]]
+
+
+![[Screenshot 2025-06-11 134437.png]]
+
+
+
+- Wordpress 
+![[Screenshot 2025-06-11 134742.png]]
+
+
 
 ## 📆 FTP-Backup via FileZilla & SCP
 
@@ -136,7 +152,7 @@ unzip *.zip
 sudo cp -r * /var/www/html/
 ```
 
-➡️ _Screenshot hinzufügen: FileZilla Upload & SSH unzip_
+![[Screenshot 2025-06-11 135404 2.png]]
 
 ---
 
