@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03-Umsetzung/Docker-Umsetzung.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Docker-Umsetzung"
+              "title": "README"
             }
           }
         ]
@@ -181,9 +181,9 @@
   },
   "active": "404c4bd5fb20e296",
   "lastOpenFiles": [
-    "README.md",
     "03-Umsetzung/AWS-Umsetzung.md",
     "03-Umsetzung/Docker-Umsetzung.md",
+    "README.md",
     "02-Planung/mermaidchart.md",
     "Unbenannt.md",
     "Bilder/Screenshot 2025-06-11 135404 2.png",
