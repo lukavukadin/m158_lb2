@@ -1,0 +1,17 @@
+$TTL 2d
+$ORIGIN wordpress.m158.
+
+@		IN      SOA     dns.wordpress.m158 admin.home.lan (
+                                20230218		; serial number
+		                        3600			; refresh period
+		                        600			    ; retry period
+		                        604800			; expire time
+		                        1800			; negative TTL
+                                )
+@		IN      NS      dns.wordpress.m158.
+
+dns		IN      A	172.31.94.204
+
+; A Records
+dns		IN      A       172.31.94.204
+web		IN      A       172.31.94.205

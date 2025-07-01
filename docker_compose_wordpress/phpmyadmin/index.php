@@ -1,0 +1,1 @@
+<?php header("Location: https://m158.proxmox.party/phpmyadmin"); exit; ?>

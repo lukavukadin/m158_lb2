@@ -1,0 +1,78 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: apache_php
+    ports:
+      - "80:80"   # Für HTTP
+      - "443:443"  # Für HTTPS
+    volumes:
+      - ./html:/var/www/html
+      - ./apache/wordpress.conf:/etc/apache2/sites-available/wordpress.conf
+      - ./apache/servername.conf:/etc/apache2/conf-available/servername.conf
+      - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./ssl:/etc/ssl  # Zertifikate einbinden
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html
+    depends_on:
+      - db
+    command: >
+      bash -c "apt-get update && 
+               apt-get install -y libzip-dev libexif-dev libmagickwand-dev libpng-dev libjpeg-dev libicu-dev imagemagick && 
+               docker-php-ext-configure gd --with-jpeg && 
+               docker-php-ext-install mysqli zip exif gd intl && 
+               pecl channel-update pecl.php.net && 
+               (pecl install imagick-3.7.0 && docker-php-ext-enable imagick) || echo 'Imagick installation failed, proceeding without it' && 
+               a2enmod rewrite && 
+               a2enmod ssl &&  
+               ln -sf /etc/apache2/sites-available/wordpress.conf /etc/apache2/sites-enabled/wordpress.conf &&  
+               a2enconf servername && 
+               apache2-foreground"
+
+  db:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: wordpress_db
+      MYSQL_USER: wordpress_user
+      MYSQL_PASSWORD: wordpress_pass
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: phpmyadmin
+    ports:
+      - "8888:80"
+    environment:
+      PMA_HOST: db
+      PMA_USER: wordpress_user
+      PMA_PASSWORD: wordpress_pass
+      PMA_ARBITRARY: 1
+      PMA_ABSOLUTE_URI: http://m158.proxmox.party:8888/
+    depends_on:
+      - db
+
+  ftp:
+    image: fauria/vsftpd
+    container_name: ftp_server
+    ports:
+      - "21:21"
+      - "21000-21010:21000-21010"
+    environment:
+      - FTP_USER=m158ftp
+      - FTP_PASS=m158pass
+      - PASV_ADDRESS=localhost  # später für EC2: meine Elastic IP (z. B. 54.145.3.27)
+      - PASV_MIN_PORT=21000
+      - PASV_MAX_PORT=21010
+      - LOG_STDOUT=1
+    volumes:
+      - ./html:/home/vsftpd/m158ftp
+    restart: always
+    depends_on:
+      - web
+
+volumes:
+  db_data:

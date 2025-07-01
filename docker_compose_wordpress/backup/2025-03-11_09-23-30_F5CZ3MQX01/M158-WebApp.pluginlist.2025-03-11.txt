@@ -1,0 +1,20 @@
+------------------------------------------------------------
+  Plugin list generated with BackWPup version: 4.0.4
+  http://backwpup.com
+  Blog Name: M158 - WebApp
+  Blog URL: https://m158.geekz.ch
+  Generated on: 2025-03-11 09:23.31
+------------------------------------------------------------
+
+
+Alle Plugin-Informationen:
+------------------------------
+BackWPup (v.4.0.4) von WP MEDIA SAS
+	http://backwpup.com
+
+Aktive Plugins:
+------------------------------
+BackWPup
+
+Inaktive Plugins:
+------------------------------

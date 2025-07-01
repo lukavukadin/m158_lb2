@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "1a2eebca52816353",
+        "id": "5f2fb8fc0d08fd5d",
         "type": "tabs",
         "children": [
           {
-            "id": "404c4bd5fb20e296",
+            "id": "2304916c7baefd0c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Neuer Tab"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - Dokumentation/cloud-modelle-analyse.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Rückverweise für cloud-modelle-analyse"
+              "title": "Rückverweis"
             }
           },
           {
@@ -179,27 +174,47 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "404c4bd5fb20e296",
+  "active": "2304916c7baefd0c",
   "lastOpenFiles": [
+    "Unbenannt 1.canvas",
+    "Unbenannt.canvas",
+    "LB2-Migration.md",
+    "Pasted image 20250701153236.png",
+    "Pasted image 20250701152605.png",
+    "Pasted image 20250701145741.png",
+    "README.md",
+    "Unbenannt.md",
+    "Pasted image 20250701145003.png",
+    "Pasted image 20250701144901.png",
+    "Pasted image 20250701144827.png",
+    "Pasted image 20250701144801.png",
+    "Pasted image 20250701142946.png",
+    "Pasted image 20250701122727.png",
+    "Pasted image 20250701121822.png",
+    "docker_compose_wordpress/backup/wp_m158_db.sql",
+    "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/Precomp.php",
+    "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/P3.php",
+    "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/P2.php",
+    "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/P1p1.php",
+    "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/Cached.php",
+    "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core/Curve25519/Ge/P1p1.php",
+    "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core/Curve25519/Ge/Precomp.php",
+    "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core/Curve25519/Ge/P3.php",
+    "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core/Curve25519/Ge/P2.php",
+    "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core32/Curve25519/README.md",
+    "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core/Curve25519/README.md",
+    "docker_compose_wordpress/Backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core32/Curve25519/README.md",
+    "docker_compose_wordpress/Backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core/Curve25519/README.md",
+    "Backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core32/Curve25519/README.md",
+    "Backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core/Curve25519/README.md",
+    "01-Aufgaben.md",
+    "02-Planung.md",
     "03-Umsetzung/AWS-Umsetzung.md",
     "03-Umsetzung/Docker-Umsetzung.md",
-    "README.md",
     "02-Planung/mermaidchart.md",
-    "Unbenannt.md",
-    "Bilder/Screenshot 2025-06-11 135404 2.png",
-    "Bilder/Screenshot 2025-06-11 135404 1.png",
-    "Bilder/Screenshot 2025-06-11 135404.png",
-    "Bilder/Screenshot 2025-06-11 134742.png",
-    "Bilder/Screenshot 2025-06-11 134437.png",
-    "Bilder/Screenshot 2025-06-11 134204.png",
-    "Bilder/Screenshot 2025-06-11 133941.png",
-    "Bilder/Screenshot 2025-06-11 133925.png",
     "02-Planung/Architektursdiagramm.md",
-    "Bilder/Screenshot 2025-06-11 110037.png",
-    "Bilder/Internet (2).png",
     "05-Diverses/Logins.md",
     "01-Aufgaben/Übung-Pfade.md",
-    "03-Umsetzung",
     "04-WordPress/Config.md",
     "04-WordPress/Backup.md",
     "04-Diverses.md",
@@ -207,17 +222,6 @@
     "05-Diverses/Links.md",
     "04-WordPress/Application.md",
     "03-Umsetzung.md",
-    "01-Aufgaben/cloud-modelle-analyse.md",
-    "Unbenannt.canvas",
-    "02-Planung",
-    "Bilder",
-    "01-Aufgaben/Unbenannt",
-    "01 - Aufgaben.md",
-    "m158_lb2/01 - Aufgaben 2.md",
-    "m158_lb2/01 - Aufgaben.md",
-    "m158_lb2/01 - Aufgaben 1.md",
-    "m158_lb2/01 - Dokumentation.md",
-    "m158_lb2",
-    "01 - Dokumentation/löschen.md"
+    "01-Aufgaben/cloud-modelle-analyse.md"
   ]
 }
