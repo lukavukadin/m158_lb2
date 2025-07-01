@@ -205,5 +205,3 @@ Die Verbindung erfolgt abgesichert und eingeschränkt – damit ist das Bewertun
 ![[Pasted image 20250701153236.png]]
 
 
-
-sdfsf
