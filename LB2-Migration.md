@@ -19,72 +19,95 @@
 
 ## 2 Erste Docker-Umgebung starten
 
-
 ### 2.1 Start der Docker-Umgebung mit `docker-compose up -d`
 
-Nach dem Kopieren der Projektstruktur wurde die lokale Entwicklungsumgebung mit dem folgenden Befehl im Hintergrund gestartet:
+Nach dem Aufbau der Projektstruktur und der Konfiguration aller Dienste wurde die lokale Entwicklungsumgebung mit folgendem Befehl gestartet:
 
-`docker-compose up -d`
+```
+docker-compose up -d
+```
 
+Dabei wurden folgende Services erstellt und gestartet:
 
-Dabei wurden:
-
-- alle benötigten **Docker-Images automatisch heruntergeladen** (`php`, `mysql`, `phpmyadmin`, etc.)
+- `web`: Apache-Webserver mit PHP 8.3, inklusive aller benötigten Extensions (`gd`, `intl`, `imagick`, `mysqli`, usw.)
     
-- der Apache-Webserver, die MariaDB-Datenbank und phpMyAdmin **gebaut und gestartet**
+- `php`: PHP-FPM-Prozess, zuständig für asynchrones PHP-Processing inkl. Cronjob-Setup
     
-- ein Docker-Netzwerk sowie ein Volume für die Datenbank persistenz erstellt
-
-
-Die Ausgabe bestätigt, dass:
-
-- Alle Dienste erfolgreich gebaut und ausgeführt wurden
+- `db`: MySQL-Datenbank (Version 8.0) mit vordefiniertem Benutzer und Datenbank
     
-- Das Setup jetzt betriebsbereit ist
+- `phpmyadmin`: Verwaltungstool für MySQL über Weboberfläche
+    
+- `ftp`: FTP-Server auf Port 21 mit aktivem Benutzer
+    
 
+Außerdem:
 
-Dieser Schritt ist die technische Grundlage für die weitere WordPress-Migration.
+- ein Docker-Netzwerk wurde erstellt
+    
+- ein Volume für persistente Datenbankdaten wurde eingerichtet
+    
+- beim Build wurden alle Abhängigkeiten wie PHP-Module und ImageMagick automatisch installiert
+    
 
-![[Pasted image 20250701115222.png]]
+Die Services wurden ohne Fehlermeldung erfolgreich gebaut und gestartet – Grundlage für alle weiteren Migrationen.
 
-----
+![docker-compose up](Pasted image 20250701115222.png)
 
+---
 
 ### 2.2 **Statusprüfung laufender Docker-Container**
 
-Mit dem Befehl `docker ps` wurde überprüft, ob alle geplanten Dienste erfolgreich gestartet wurden.  
-Die Ausgabe zeigt, dass die folgenden Container aktiv sind:
+Über den Befehl `docker ps` wurde sichergestellt, dass alle Services erfolgreich laufen:
 
-- `apache_php`: Webserver (Apache mit PHP), erreichbar auf den Ports **80 (HTTP)** und **443 (HTTPS)**
+|Container|Beschreibung|Ports|
+|---|---|---|
+|`apache_php`|Apache + PHP Webserver|80 (HTTP), 443 (HTTPS)|
+|`php_fpm`|PHP-FPM-Prozessor|9000 (intern)|
+|`mysql_db`|MySQL-Datenbankserver|3306, 33060 (intern)|
+|`phpmyadmin`|phpMyAdmin Verwaltungsoberfläche|8888 → 80 (Web)|
+|`ftp_server`|FTP-Server (Benutzer: m158ftp)|21, 21000–21010 (aktiv/passiv)|
+
+![docker ps](Pasted image 20250701115301.png)
+
+Diese Übersicht bestätigt den stabilen Zustand der gesamten Infrastruktur.
+
+---
+
+### 2.3 Web-, FTP- und Datenbank-Zugriff testen
+
+#### ✅ Test der Apache-Webserver-Konfiguration
+
+Durch den Aufruf von `http://localhost` im Browser wurde die Datei `index.html` erfolgreich angezeigt.
+
+Die Datei `info.php` (enthält `phpinfo()`) wurde ebenfalls getestet:
+
+👉 `http://localhost/info.php` zeigt alle installierten PHP-Module – **PHP funktioniert korrekt**.
+
+
+#### ✅ Test der phpMyAdmin-Verbindung zur Datenbank
+
+Der Zugriff auf phpMyAdmin erfolgte über `http://localhost:8888`.
+
+- Login mit Benutzer `wordpress_user`
     
-- `phpmyadmin`: phpMyAdmin, erreichbar über **Port 8888**
-    
-- `mysql_db`: MariaDB-Datenbankserver, läuft intern auf **Port 3306**
+- Verbindung zur Datenbank `wordpress_db` funktionierte erfolgreich
     
 
-Dies bestätigt, dass die grundlegende Server-Infrastruktur für die spätere WordPress-Migration korrekt und funktionsfähig konfiguriert ist.
-
-![[Pasted image 20250701115301.png]]
 
 
-### 2.3 Web- und Datenbank-Zugriff testen
+#### ✅ Test des FTP-Zugriffs
 
-**Test der Apache-Webserver-Konfiguration**
-   
-Nach dem erfolgreichen Start der Docker-Container wurde im Browser `http://localhost` aufgerufen.  
-Die angezeigte Testseite „**Das ist meine Docker HTML-Seite**“ bestätigt, dass der Apache-Webserver korrekt läuft und auf Port 80 reagiert.
+Der FTP-Zugriff wurde mit **FileZilla** erfolgreich getestet:
 
-![[Pasted image 20250701115607.png]]
+- Host: `localhost`, Port: `21`
+    
+- Benutzer: `m158ftp`, Passwort: `m158pass`
+    
+- Erfolgreiche Anzeige der Dateien `index.html` und `info.php` im `html`-Verzeichnis
 
-Damit ist sichergestellt, dass sowohl der Webserver als auch die Datenbank einsatzbereit sind – die Grundlage für die anschließende WordPress-Migration ist gegeben.
 
+![FTP Zugriff](./img/ftp_zugriff_funktioniert.png)
 
-**Test der phpMyAdmin-Verbindung zur Datenbank**
-
-Die phpMyAdmin-Oberfläche wurde erfolgreich unter `http://localhost:8888` geöffnet.  
-Es sind bereits mehrere Datenbanken sichtbar, darunter `wordpress_db`, was zeigt, dass die Verbindung zum MariaDB-Datenbankserver funktioniert.
-
-![[Pasted image 20250701115622.png]]
 
 ---
 
