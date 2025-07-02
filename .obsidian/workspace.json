@@ -179,8 +179,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ea8da44dc4bea530",
+  "active": "2304916c7baefd0c",
   "lastOpenFiles": [
+    "docker_compose_wordpress/backup/wp_files_2025-07-02_15-30-01.tar.gz",
+    "docker_compose_wordpress/backup/db_backup_2025-07-02_15-30-01.sql",
     "img/infophp_zugriff_funktioniert.png",
     "docker_compose_wordpress/backup/wp_files_2025-07-02_13-45-01.tar.gz",
     "docker_compose_wordpress/backup/db_backup_2025-07-02_13-45-01.sql",
@@ -204,8 +206,6 @@
     "Pasted.md",
     "docker_compose_wordpress/backup/wp_files_2025-07-02_12-15-01.tar.gz",
     "docker_compose_wordpress/backup/db_backup_2025-07-02_12-15-01.sql",
-    "docker_compose_wordpress/backup/wp_files_2025-07-02_12-00-01.tar.gz",
-    "Pasted image 20250702110041.png",
     "README.md",
     "Unbenannt.md",
     "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core32/Curve25519/README.md",

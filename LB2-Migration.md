@@ -119,6 +119,25 @@ Der FTP-Zugriff wurde mit **FileZilla** erfolgreich getestet:
 ![FTP Zugriff](./img/ftp_zugriff_funktioniert.png)
 
 
+## 2.4 Migration lokal erfolgreich gestartet (WordPress)
+
+Nach dem Kopieren der Website-Dateien aus dem FTP-Backup (inkl. Theme, Plugins, `wp-admin`, `wp-includes`, etc.) ins Verzeichnis `html/` wurde WordPress wie erwartet geladen.
+
+Dabei wurden folgende Anpassungen gemacht:
+
+- Die `index.html` aus dem ursprünglichen Test wurde umbenannt in `index_backup.html`, um das WordPress-Frontend sichtbar zu machen.
+    
+- Die Datei `wp-config.php` wurde überprüft und enthielt bereits die korrekten Zugangsdaten zur Docker-Datenbank (`wordpress_db`, Benutzer `wordpress_user`, Host `db`).
+    
+- Die Seite wurde über `http://localhost` geöffnet und das **vollständige Frontend korrekt angezeigt**, inklusive Theme (Divi) und Layout.
+
+
+---
+
+### WordPress Login überprüft
+
+Zusätzlich wurde der Zugang zu `http://localhost/wp-login.php` getestet.  
+Die Loginseite von WordPress erschien wie erwartet:
 ---
 
 ## 3. Migration vorbereiten (Daten)
