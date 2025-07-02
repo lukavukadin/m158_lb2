@@ -391,6 +391,27 @@ find $BACKUP_DIR -type f -mtime +7 -exec rm {} \;
 -----
 
 
+
+
+
+
+
+
+
+
+![[Pasted image 20250702110041.png]]
+
+
+
+
+
+
+
+
+
+
+
+
 ## 9. Migration in die Cloud (AWS)
 
 
