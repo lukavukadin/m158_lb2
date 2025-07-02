@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   web:
     build:
@@ -6,48 +8,48 @@ services:
     container_name: apache_php
     ports:
       - "80:80"   # Für HTTP
-      - "443:443"  # Für HTTPS
+      - "443:443" # Für HTTPS
     volumes:
       - ./html:/var/www/html
       - ./apache/wordpress.conf:/etc/apache2/sites-available/wordpress.conf
       - ./apache/servername.conf:/etc/apache2/conf-available/servername.conf
       - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
-      - ./ssl:/etc/ssl  # Zertifikate einbinden
+      - ./ssl:/etc/ssl
     environment:
       - APACHE_DOCUMENT_ROOT=/var/www/html
     depends_on:
       - db
       - php
     command: >
-      bash -c "apt-get update && 
-               apt-get install -y make libzip-dev libexif-dev libmagickwand-dev libpng-dev libjpeg-dev libicu-dev imagemagick && 
-               docker-php-ext-configure gd --with-jpeg && 
-               docker-php-ext-install mysqli zip exif gd intl && 
-               pecl channel-update pecl.php.net && 
-               (pecl install imagick-3.7.0 && docker-php-ext-enable imagick) || echo 'Imagick installation failed, proceeding without it' && 
-               a2enmod rewrite && 
-               a2enmod ssl &&  
-               ln -sf /etc/apache2/sites-available/wordpress.conf /etc/apache2/sites-enabled/wordpress.conf &&  
-               a2enconf servername && 
+      bash -c "apt-get update &&
+               apt-get install -y make libzip-dev libexif-dev libmagickwand-dev libpng-dev libjpeg-dev libicu-dev imagemagick &&
+               docker-php-ext-configure gd --with-jpeg &&
+               docker-php-ext-install mysqli zip exif gd intl &&
+               pecl channel-update pecl.php.net &&
+               (pecl install imagick-3.7.0 && docker-php-ext-enable imagick) || echo 'Imagick installation failed, proceeding without it' &&
+               a2enmod rewrite &&
+               a2enmod ssl &&
+               ln -sf /etc/apache2/sites-available/wordpress.conf /etc/apache2/sites-enabled/wordpress.conf &&
+               a2enconf servername &&
                apache2-foreground"
 
-php:
-  image: php:8.3-fpm
-  container_name: php_fpm
-  volumes:
-    - ./html:/var/www/html
-    - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
-    - ./backup:/backup
-  command: >
-    bash -c "
-      apt-get update && apt-get install -y cron &&
-      chmod +x /backup/backup.sh &&
-      echo '*/15 * * * * root /backup/backup.sh' > /etc/cron.d/backup-cron &&
-      chmod 0644 /etc/cron.d/backup-cron &&
-      crontab /etc/cron.d/backup-cron &&
-      service cron start &&
-      php-fpm"
-  restart: always
+  php:
+    image: php:8.3-fpm
+    container_name: php_fpm
+    volumes:
+      - ./html:/var/www/html
+      - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+      - ./backup:/backup
+    command: >
+      bash -c "
+        apt-get update && apt-get install -y cron &&
+        chmod +x /backup/backup.sh &&
+        echo '*/15 * * * * root /backup/backup.sh' > /etc/cron.d/backup-cron &&
+        chmod 0644 /etc/cron.d/backup-cron &&
+        crontab /etc/cron.d/backup-cron &&
+        service cron start &&
+        php-fpm"
+    restart: always
 
   db:
     image: mysql:8.0
@@ -83,7 +85,7 @@ php:
     environment:
       - FTP_USER=m158ftp
       - FTP_PASS=m158pass
-      - PASV_ADDRESS=localhost  # später für EC2: deine Elastic IP
+      - PASV_ADDRESS=localhost
       - PASV_MIN_PORT=21000
       - PASV_MAX_PORT=21010
       - LOG_STDOUT=1
