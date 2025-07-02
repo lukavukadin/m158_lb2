@@ -187,7 +187,6 @@ Die Verbindung wird über den internen Containernamen `db` hergestellt, nicht ü
 
 ## 5. Serverkonfiguration verfeinern
 
-
 ### 5.1 Apache wordpress.conf für SSL & Sicherheit
 
 Für den Webserver wurde die Datei apache/wordpress.conf angepasst, um die Anforderungen für die Stufe 3 im Bewertungskriterium Webserver zu erfüllen.
