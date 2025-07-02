@@ -20,7 +20,7 @@ services:
       - php
     command: >
       bash -c "apt-get update && 
-               apt-get install -y libzip-dev libexif-dev libmagickwand-dev libpng-dev libjpeg-dev libicu-dev imagemagick && 
+               apt-get install -y make libzip-dev libexif-dev libmagickwand-dev libpng-dev libjpeg-dev libicu-dev imagemagick && 
                docker-php-ext-configure gd --with-jpeg && 
                docker-php-ext-install mysqli zip exif gd intl && 
                pecl channel-update pecl.php.net && 
@@ -31,22 +31,23 @@ services:
                a2enconf servername && 
                apache2-foreground"
 
-  php:
-    image: php:8.3-fpm
-    container_name: php_fpm
-    volumes:
-      - ./html:/var/www/html
-      - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
-      - ./backup:/backup
-    command: >
-      bash -c "
-        apt-get update && apt-get install -y cron &&
-        echo '*/15 * * * * root /backup/backup.sh' > /etc/cron.d/backup-cron &&
-        chmod 0644 /etc/cron.d/backup-cron &&
-        crontab /etc/cron.d/backup-cron &&
-        service cron start &&
-        php-fpm"
-    restart: always
+php:
+  image: php:8.3-fpm
+  container_name: php_fpm
+  volumes:
+    - ./html:/var/www/html
+    - ./php/custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    - ./backup:/backup
+  command: >
+    bash -c "
+      apt-get update && apt-get install -y cron &&
+      chmod +x /backup/backup.sh &&
+      echo '*/15 * * * * root /backup/backup.sh' > /etc/cron.d/backup-cron &&
+      chmod 0644 /etc/cron.d/backup-cron &&
+      crontab /etc/cron.d/backup-cron &&
+      service cron start &&
+      php-fpm"
+  restart: always
 
   db:
     image: mysql:8.0
@@ -69,7 +70,7 @@ services:
       PMA_USER: wordpress_user
       PMA_PASSWORD: wordpress_pass
       PMA_ARBITRARY: 1
-      PMA_ABSOLUTE_URI: http://m158.proxmox.party:8888/
+      # PMA_ABSOLUTE_URI: http://m158.proxmox.party:8888/
     depends_on:
       - db
 
