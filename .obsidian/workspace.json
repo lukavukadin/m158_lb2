@@ -179,8 +179,10 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2304916c7baefd0c",
+  "active": "ea8da44dc4bea530",
   "lastOpenFiles": [
+    "Bilder/zwei_ordner.png",
+    "Bilder/repo_aeschlimann.png",
     "Unbenannt 1.canvas",
     "Unbenannt.canvas",
     "LB2-Migration.md",
@@ -195,7 +197,6 @@
     "Pasted image 20250701144801.png",
     "Pasted image 20250701142946.png",
     "Pasted image 20250701122727.png",
-    "Pasted image 20250701121822.png",
     "docker_compose_wordpress/backup/wp_m158_db.sql",
     "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/Precomp.php",
     "docker_compose_wordpress/backup/2025-03-11_09-23-30_F5CZ3MQX01/wp-includes/sodium_compat/src/Core32/Curve25519/Ge/P3.php",
