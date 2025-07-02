@@ -4,11 +4,12 @@
 
 ### 1.1 klonen des Repositories von Aeschlimann
 
-![[repo_aeschlimann.png]]
+
+![[repo_aeschlimann 1.png]]
 
 ### 1.2 Kopieren der zwei Ordner
 
-![[zwei_ordner.png]]
+![[Pasted image 20250701114408.png]]
 
 
 ---
