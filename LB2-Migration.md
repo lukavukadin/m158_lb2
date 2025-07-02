@@ -186,7 +186,7 @@ Zusätzlich wurde der Benutzer `ubuntu` der Docker-Gruppe hinzugefügt, um Docke
 
 ---
 
-### 📂 9. FTP-Server per Docker integriert
+### 9. FTP-Server per Docker integriert
 
 Für den Datei-Zugriff wurde ein FTP-Server auf Basis von `vsftpd` in das Docker-Setup eingebunden.  
 Der Container wurde über Docker Compose mit folgenden Einstellungen eingerichtet:
@@ -203,5 +203,99 @@ Der Container wurde über Docker Compose mit folgenden Einstellungen eingerichte
 Die Verbindung erfolgt abgesichert und eingeschränkt – damit ist das Bewertungskriterium für **Stufe 3 – FTP** vollständig erfüllt.
 
 ![[Pasted image 20250701153236.png]]
+
+---
+
+### 10. Apache-Konfiguration für sichere WordPress-Nutzung
+
+Für den Webserver wurde die Datei apache/wordpress.conf angepasst, um die Anforderungen für die Stufe 3 im Bewertungskriterium Webserver zu erfüllen.
+
+Die Konfiguration besteht aus zwei VirtualHost-Blöcken: einer für HTTP, einer für HTTPS.
+
+#### Aufbau der Datei wordpress.conf:
+
+````
+<VirtualHost *:80>
+    ServerName m158.proxmox.party
+    Redirect permanent / https://m158.proxmox.party/
+</VirtualHost>
+````
+Erklärung:
+- Dieser Block fängt alle HTTP-Zugriffe ab (Port 80)
+- Leitet sie permanent (301) auf HTTPS weiter → wichtig für Sicherheit & Bewertung
+
+
+````
+<VirtualHost *:443>
+    ServerName m158.proxmox.party
+    DocumentRoot /var/www/html
+````
+Erklärung:
+- HTTPS-Block für den Zugriff über TLS/SSL (Port 443)
+- Domainname als FQDN gesetzt (Pflicht laut Bewertungsraster)
+- DocumentRoot zeigt auf WordPress-Verzeichnis
+
+
+````
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/certs/fullchain.pem
+    SSLCertificateKeyFile /etc/ssl/private/privkey.pem
+````
+Erklärung:
+- Aktiviert SSL-Verschlüsselung (self-signed Zertifikate)
+- Die Pfade zeigen auf Zertifikate, die im Projekt unter ssl/ liegen
+- Diese werden im docker-compose.yml korrekt eingebunden
+
+
+````
+    <Directory /var/www/html>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+````
+Erklärung:
+- Erlaubt .htaccess (wichtig für WordPress-Permalinks!)
+- Require all granted macht das Verzeichnis öffentlich erreichbar
+
+````
+    <IfModule mod_expires.c>
+        ExpiresActive On
+        ...
+    </IfModule>
+````
+Erklärung:
+- Aktiviert Client-Caching für statische Dateien
+- Reduziert Ladezeit & Serverlast
+- Bonuspunkt für professionelle Umsetzung
+
+
+````
+    <IfModule mod_headers.c>
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    </IfModule>
+````
+Erklärung:
+- Aktiviert HSTS (HTTP Strict Transport Security)
+- Erzwingt HTTPS in modernen Browsern – Sicherheitsbest Practice
+
+````
+    ErrorLog /var/log/apache2/m158_error.log
+    CustomLog /var/log/apache2/m158_access.log combined
+</VirtualHost>
+````
+Erklärung:
+- Individuelle Log-Dateien für Fehler und Zugriffe
+- Erleichtert Debugging & Analyse
+
+#### Warum diese Änderungen?
+
+Diese Konfiguration wurde umgesetzt, um:
+
+- HTTPS-Verbindung sicherzustellen
+- Keine Apache Default Page mehr zu haben
+- HTTP → HTTPS Weiterleitung zu erzwingen
+- RewriteEngine via .htaccess zu aktivieren (Permalinks)
+- Caching & Sicherheit zu verbessern
 
 
