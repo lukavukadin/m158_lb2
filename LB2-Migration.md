@@ -21,11 +21,19 @@
 
 ### 2.1 Start der Docker-Umgebung mit `docker-compose up -d`
 
-Nach dem Aufbau der Projektstruktur und der Konfiguration aller Dienste wurde die lokale Entwicklungsumgebung mit folgendem Befehl gestartet:
+Nach dem Aufbau der Projektstruktur und der Konfiguration aller Dienste wurde die lokale Entwicklungsumgebung vollständig neu aufgebaut und gestartet. Dies geschieht in zwei Schritten:
 
-```
-docker-compose up -d
-```
+`docker-compose build --no-cache`
+`docker-compose up -d`
+
+- Der Befehl `docker-compose build --no-cache` sorgt dafür, dass alle Abhängigkeiten **frisch installiert** werden (z. B. PHP-Module, Apache-Konfiguration, ImageMagick).
+
+![[img/docker_compose_build.png]]
+
+- Anschliessend startet `docker-compose up -d` alle Services im Hintergrund.
+
+![[/img/docker_compose_up.png]]
+
 
 Dabei wurden folgende Services erstellt und gestartet:
 
@@ -40,18 +48,16 @@ Dabei wurden folgende Services erstellt und gestartet:
 - `ftp`: FTP-Server auf Port 21 mit aktivem Benutzer
     
 
-Außerdem:
+Ausserdem:
 
 - ein Docker-Netzwerk wurde erstellt
     
 - ein Volume für persistente Datenbankdaten wurde eingerichtet
     
 - beim Build wurden alle Abhängigkeiten wie PHP-Module und ImageMagick automatisch installiert
-    
+
 
 Die Services wurden ohne Fehlermeldung erfolgreich gebaut und gestartet – Grundlage für alle weiteren Migrationen.
-
-![docker-compose up](Pasted image 20250701115222.png)
 
 ---
 
@@ -59,15 +65,15 @@ Die Services wurden ohne Fehlermeldung erfolgreich gebaut und gestartet – Grun
 
 Über den Befehl `docker ps` wurde sichergestellt, dass alle Services erfolgreich laufen:
 
-|Container|Beschreibung|Ports|
-|---|---|---|
-|`apache_php`|Apache + PHP Webserver|80 (HTTP), 443 (HTTPS)|
-|`php_fpm`|PHP-FPM-Prozessor|9000 (intern)|
-|`mysql_db`|MySQL-Datenbankserver|3306, 33060 (intern)|
-|`phpmyadmin`|phpMyAdmin Verwaltungsoberfläche|8888 → 80 (Web)|
-|`ftp_server`|FTP-Server (Benutzer: m158ftp)|21, 21000–21010 (aktiv/passiv)|
+| Container    | Beschreibung                     | Ports                          |
+| ------------ | -------------------------------- | ------------------------------ |
+| `apache_php` | Apache + PHP Webserver           | 80 (HTTP), 443 (HTTPS)         |
+| `php_fpm`    | PHP-FPM-Prozessor                | 9000 (intern)                  |
+| `mysql_db`   | MySQL-Datenbankserver            | 3306, 33060 (intern)           |
+| `phpmyadmin` | phpMyAdmin Verwaltungsoberfläche | 8888 → 80 (Web)                |
+| `ftp_server` | FTP-Server (Benutzer: m158ftp)   | 21, 21000–21010 (aktiv/passiv) |
 
-![docker ps](Pasted image 20250701115301.png)
+![[/img/docker_ps_alles_funktioniert.png]]
 
 Diese Übersicht bestätigt den stabilen Zustand der gesamten Infrastruktur.
 
@@ -79,10 +85,13 @@ Diese Übersicht bestätigt den stabilen Zustand der gesamten Infrastruktur.
 
 Durch den Aufruf von `http://localhost` im Browser wurde die Datei `index.html` erfolgreich angezeigt.
 
+![[img/infophp_zugriff_funktioniert.png]]
+
 Die Datei `info.php` (enthält `phpinfo()`) wurde ebenfalls getestet:
 
-👉 `http://localhost/info.php` zeigt alle installierten PHP-Module – **PHP funktioniert korrekt**.
+`http://localhost/info.php` zeigt alle installierten PHP-Module – **PHP funktioniert korrekt**.
 
+![![localhost Zugriff](img/localhost_zugriff_funktioniert.png)
 
 #### ✅ Test der phpMyAdmin-Verbindung zur Datenbank
 
@@ -91,8 +100,9 @@ Der Zugriff auf phpMyAdmin erfolgte über `http://localhost:8888`.
 - Login mit Benutzer `wordpress_user`
     
 - Verbindung zur Datenbank `wordpress_db` funktionierte erfolgreich
-    
 
+
+![![PhpMyAdmin Zugriff](./img/phpmyadmin_zugriff_funktioniert.png)
 
 
 #### ✅ Test des FTP-Zugriffs
@@ -466,7 +476,7 @@ Die Konfiguration der Instanz erfolgte wie folgt:
 ###  9.3 Docker und Docker Compose auf AWS-EC2 installiert
 
 Nach dem Starten der EC2-Instanz wurde der Ubuntu-Server über SSH verbunden.  
-Anschließend wurden Docker und Docker Compose mit folgenden Befehlen installiert:
+Anschliessend wurden Docker und Docker Compose mit folgenden Befehlen installiert:
 
 `sudo apt update && sudo apt upgrade -y sudo apt install -y docker.io sudo apt install -y docker-compose`
 ![[Pasted image 20250701144801.png]]
