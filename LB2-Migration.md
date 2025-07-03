@@ -456,13 +456,6 @@ find $BACKUP_DIR -type f -mtime +7 -exec rm {} \;
 
 
 
-
-
-
-
-
-
-
 ## 9. Migration in die Cloud (AWS)
 
 
@@ -514,3 +507,59 @@ Zusätzlich wurde der Benutzer `ubuntu` der Docker-Gruppe hinzugefügt, um Docke
 `sudo usermod -aG docker ubuntu`
 
 ![[Pasted image 20250701145741.png]]
+
+
+Diesen Befhel ausgeführt, damit es den Ordnern rèber kopiert auf die Instance:
+
+`scp -r -i "C:\Users\vukadinl\.ssh\vuk-webserver-key.pem" "C:\Users\vukadinl\OneDrive - NZZ\Dokumente\m158_lb2\docker_compose_wordpress" ubuntu@54.145.3.27:/home/ubuntu/
+
+![[img/migration_ec2.png]]
+
+
+Die IP von der EC2 Instance angegeben bei dem FTP SERVER:
+
+![[img/ftp_umändern_pasvaddress.png]]
+
+
+Unter phpmyadmin habe ich PMA_ABSOLUTE_URI auf  http://54.145.3.27:8888/ geändert:
+
+![[img/phpmyadmin_PMA_ABSOLUTE_URI_geändert 2.png]]
+
+
+Jetzt habe ich die Docker-compose.yaml gestartet:
+
+![[Pasted image 20250703101551.png]]
+
+
+
+Ich konnte die IP nicht aufrufen deshalb habe ich die rechte gesetzt für den html ordner:
+
+![[img/rechte_setzen_apache.png]]
+
+Jetzt kam diese Medlung diese war Falsch:
+
+![[img/wordpress_meldung.png]]
+
+Das heisst er schafft es nicht die Datenbank zu öffnen nun muss ich prüfen ob es einen inhalt hat in der datenbank. Es hatte keinen inhalt in der wordpress_db. Deshalb musste ich den inhalt mit diesem Befehl herausholen:
+
+
+![[datenbank_mit_informationen.png]]
+
+
+
+
+Ja! der inhalt wird nun angezeigt:
+
+![[wordpress_db_wird_angezeigt.png]]
+
+Hier der beweis die seite wurde über die IP der EC2 instance geöffnet:
+
+![[website_ip_funktioniert.png]]
+
+
+Da das jetzt alles funktioniert habe ich eine Domain erstellt:
+
+![[img/domain_erstellt.png]]
+
+
+	
