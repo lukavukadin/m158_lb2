@@ -471,7 +471,6 @@ Die Konfiguration der Instanz erfolgte wie folgt:
 
 → Verbindung mit ssh -i vuk-webserver-key.pem ubuntu@54.145.3.27
 
-----
 
 ###  9.3 Docker und Docker Compose auf AWS-EC2 installiert
 
@@ -496,6 +495,8 @@ Zusätzlich wurde der Benutzer `ubuntu` der Docker-Gruppe hinzugefügt, um Docke
 
 ![alt text](/img/image_406.png)
 
+---
+
 ## 10. Ordner von Lokalem Rechner auf die EC2 rüber migriern
 
 Diesen Befhel ausgeführt, damit es den Ordnern rüber kopiert auf die Instance:
@@ -503,6 +504,8 @@ Diesen Befhel ausgeführt, damit es den Ordnern rüber kopiert auf die Instance:
 `scp -r -i "C:\Users\vukadinl\.ssh\vuk-webserver-key.pem" "C:\Users\vukadinl\OneDrive - NZZ\Dokumente\m158_lb2\docker_compose_wordpress" ubuntu@54.145.3.27:/home/ubuntu/
 
 ![alt text](/img/image_407.png)
+
+---
 
 ## 11. Änderungen in den Files durchführen
 
@@ -551,6 +554,8 @@ Hier der beweis die seite wurde über die IP der EC2 instance geöffnet:
 
 ![alt text](/img/image_415.png)
 
+----
+
 ## 12. Verfeinerungen
 
 ### 12.1 Domain erstellen
@@ -566,6 +571,79 @@ Damit die Website über die Domain erreichbar ist musste ich die alte Domain in 
 
 ![alt text](/img/änderung_sideurl_home_funktioniert.png)
 
-### 12.3 Testen des Aufrufen der Website über die Domain 
+---
 
-![alt text](/img/erstellte_domain_hat_funktioniert.png)
+
+## Nachweis der erfolgreichen Umsetzung:
+
+In diesem Abschnitt dokumentiere ich die wichtigsten Funktionstests meiner WordPress-Umgebung. Damit weise ich nach, dass alle erforderlichen Dienste wie Webserver, Datenbank, FTP-Zugang und Backup korrekt funktionieren.
+
+### Aufruf der Website über die Domain
+
+Ich konnte meine WordPress-Installation erfolgreich über meine Domain aufrufen:
+
+![alt text](/img/image_457.png)
+
+###  Zugriff auf wp-config.php
+
+Zur Kontrolle der WordPress-Konfiguration habe ich die wp-config.php geöffnet. Diese Datei enthält alle wichtigen Einstellungen, wie z.B. die Datenbankverbindung und Debug-Modus:
+
+![alt text](/img/image_450.png)
+
+
+### Testen ob FTP Server funktioniert
+
+Um zu überprüfen, ob mein FTP-Server korrekt funktioniert, habe ich mit dem Programm FileZilla eine Verbindung zu meinem Server aufgebaut.
+
+Ich habe dabei folgende Zugangsdaten verwendet:
+
+- Server: 54.145.3.27
+- Benutzername: m158ftp
+- Passwort: m158pass
+- Port: 21
+
+Die Verbindung war erfolgreich – ich konnte mich anmelden und den Inhalt des WordPress-Verzeichnisses sehen. Das bedeutet, dass der FTP-Server korrekt läuft und von aussen erreichbar ist.
+
+![alt text](/img/image_466.png)
+
+### Backup der WordPress-Datenbank
+
+Um ein Backup meiner WordPress-Datenbank zu erstellen, habe ich folgenden Befehl verwendet:
+
+`docker exec mysql_db sh -c 'exec mysqldump -u root -prootpassword wordpress_db' > backup/wp_m158_db.sql`
+
+Das Backup wurde erfolgreich unter dem Pfad backup/wp_m158_db.sql gespeichert.
+Die Datei ist 735 KB gross und enthält die vollständige Datenbankstruktur und Inhalte meiner WordPress-Installation.
+
+### Zugriff über phpMyAdmin
+
+Zusätzlich wurde der Zugriff über phpMyAdmin erfolgreich eingerichtet. Darüber kann ich die Datenbank auch komfortabel über den Webbrowser verwalten:
+
+![alt text](/img/image_468.png)
+
+### Laufende Docker-Container
+
+Um zu überprüfen, ob alle nötigen Services meiner WordPress-Installation korrekt laufen, habe ich folgenden Befehl verwendet:
+
+````
+docker ps
+````
+
+Die Ausgabe zeigt, dass folgende Container aktiv sind:
+
+| Container-Name | Aufgabe                      | Ports           |
+| -------------- | ---------------------------- | --------------- |
+| `ftp_server`   | FTP-Server (vsftpd)          | 21, 21000–21010 |
+| `apache_php`   | Webserver (Apache + PHP)     | 80, 443         |
+| `phpmyadmin`   | phpMyAdmin für DB-Verwaltung | 8888            |
+| `mysql_db`     | MySQL-Datenbank              | 3306            |
+| `php_fpm`      | PHP-Prozessor (FPM)          | 9000            |
+
+
+![alt text](image_469.png)
+
+---
+
+## Fazit
+
+Alle Kernfunktionen meiner Docker-basierten WordPress-Umgebung wurden erfolgreich eingerichtet und getestet. Die Website ist öffentlich erreichbar, die Datenbank läuft stabil, ein FTP-Zugang ist konfiguriert und ein Backup wurde erstellt. Damit ist die geforderte Umgebung vollständig umgesetzt.
