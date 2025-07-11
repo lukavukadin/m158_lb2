@@ -138,7 +138,7 @@ Dabei wurden folgende Anpassungen gemacht:
 Zusätzlich wurde der Zugang zu `http://localhost/wp-login.php` getestet.  
 Die Loginseite von WordPress erschien wie erwartet:
 
-![alt text](/img/localhost_website.png)
+![alt text](/img/localhost_wp_login_php.png)
 
 ---
 
