@@ -181,7 +181,10 @@
   },
   "active": "2304916c7baefd0c",
   "lastOpenFiles": [
+    "repo_aeschlimann.png",
     "README.md",
+    "repo_aeschlimann 1.png",
+    "img/repo_aeschlimann.md",
     "LB2-Migration.md",
     "docker_compose_wordpress/backup/wp_files_2025-07-03_09-00-01.tar.gz",
     "docker_compose_wordpress/backup/db_backup_2025-07-03_09-00-01.sql",
@@ -201,8 +204,6 @@
     "docker_compose_wordpress/backup/db_backup_2025-07-03_08-15-01.sql",
     "docker_compose_wordpress/backup/wp_files_2025-07-03_08-00-01.tar.gz",
     "docker_compose_wordpress/backup/db_backup_2025-07-03_08-00-01.sql",
-    "phpmyadmin_PMA_ABSOLUTE_URI_geändert 1.png",
-    "phpmyadmin_PMA_ABSOLUTE_URI_geändert.png",
     "Unbenannt.canvas",
     "Unbenannt 1.canvas",
     "Pasted.md",
@@ -226,7 +227,6 @@
     "04-Diverses.md",
     "05-Diverses/Vorlage-Bewertungsraster.md",
     "05-Diverses/Links.md",
-    "04-WordPress/Application.md",
-    "03-Umsetzung.md"
+    "04-WordPress/Application.md"
   ]
 }

@@ -8,7 +8,7 @@
 ### 1.1 klonen des Repositories von Aeschlimann
 
 
-![[repo_aeschlimann 1.png]]
+![](./img/repo_aeschlimann.png)
 
 ### 1.2 Kopieren der zwei Ordner
 
