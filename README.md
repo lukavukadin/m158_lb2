@@ -22,19 +22,12 @@ Das Repository ist in verschiedene Ordner unterteilt, die die verschiedenen Phas
 
 ### [03 - Umsetzung](03-Umsetzung.md)
 
--  [AWS Umgebung](AWS-Umsetzung.md)
+- [AWS Umgebung](AWS-Umsetzung.md)
 - [Docker Umgebung](Docker-Umsetzung.md)
-### [04 - WordPress](04-WordPress/)
 
-- [Backup](Backup.md): Enthält das vollständige WordPress-Backup vom alten Server.
-- [Application](Application.md): Die Dateien der WordPress-Anwendung, die auf den neuen Server migriert werden sollen.
-- [Config](Config.md): Konfigurationsdateien, die für die Einrichtung des neuen Servers notwendig sind.
 
-### [05 - Diverses](05-Diverses/)
+### [LB2 Migaration](LB2-Migration.md)
 
-- [Vorlage Bewertungsraster](Vorlage-Bewertungsraster.md): Eine Excel-Datei zur Bewertung des Projekts.
-- [Logins](Logins.md): Informationen zu den Zugangsdaten (z. B. FTP-Zugang).
-- [Links](03%20-%2Diverses/Links.md): Links zu relevanten Ressourcen oder Dokumentationen.
 
 ## Ablauf der Migration
 
