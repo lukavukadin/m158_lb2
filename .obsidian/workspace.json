@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "def3130b73903fb1",
@@ -166,7 +167,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 267.5
+    "width": 267.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -181,29 +183,30 @@
   },
   "active": "2304916c7baefd0c",
   "lastOpenFiles": [
-    "repo_aeschlimann.png",
-    "README.md",
-    "repo_aeschlimann 1.png",
-    "img/repo_aeschlimann.md",
+    "erstellte_domain_hat_funktioniert.png",
+    "backup-sh-erstellt.png",
+    "änderung_sideurl_home_funktioniert.png",
+    "image_416.png",
+    "image_415.png",
+    "image-1.png",
+    "image_414.png",
+    "image_413.png",
+    "image_412.png",
+    "image_411.png",
+    "image_410.png",
     "LB2-Migration.md",
+    "Falsch",
+    "README.md",
+    "img/repo_aeschlimann.md",
     "docker_compose_wordpress/backup/wp_files_2025-07-03_09-00-01.tar.gz",
     "docker_compose_wordpress/backup/db_backup_2025-07-03_09-00-01.sql",
-    "website_ip_funktioniert.png",
     "docker_compose_wordpress/backup/wp_files_2025-07-03_08-45-01.tar.gz",
     "docker_compose_wordpress/backup/db_backup_2025-07-03_08-45-01.sql",
-    "datenbank_mit_informationen.png",
-    "img/domain_erstellt.png",
-    "wordpress_db_wird_angezeigt.png",
     "docker_compose_wordpress/backup/wp_files_2025-07-03_08-30-01.tar.gz",
     "docker_compose_wordpress/backup/db_backup_2025-07-03_08-30-01.sql",
-    "img/wordpress_meldung.png",
-    "Pasted image 20250703101656.png",
-    "Pasted image 20250703101551.png",
-    "img/rechte_setzen_apache.png",
     "docker_compose_wordpress/backup/wp_files_2025-07-03_08-15-01.tar.gz",
     "docker_compose_wordpress/backup/db_backup_2025-07-03_08-15-01.sql",
     "docker_compose_wordpress/backup/wp_files_2025-07-03_08-00-01.tar.gz",
-    "docker_compose_wordpress/backup/db_backup_2025-07-03_08-00-01.sql",
     "Unbenannt.canvas",
     "Unbenannt 1.canvas",
     "Pasted.md",

@@ -12,7 +12,7 @@
 
 ### 1.2 Kopieren der zwei Ordner
 
-![[Pasted image 20250701114408.png]]
+![alt text](/img/image_382.png)
 
 
 ---
@@ -28,11 +28,11 @@ Nach dem Aufbau der Projektstruktur und der Konfiguration aller Dienste wurde di
 
 - Der Befehl `docker-compose build --no-cache` sorgt dafür, dass alle Abhängigkeiten **frisch installiert** werden (z. B. PHP-Module, Apache-Konfiguration, ImageMagick).
 
-![[img/docker_compose_build.png]]
+![alt text](/img/image_383.png)
 
 - Anschliessend startet `docker-compose up -d` alle Services im Hintergrund.
 
-![[/img/docker_compose_up.png]]
+![alt text](/img/image_384.png)
 
 
 Dabei wurden folgende Services erstellt und gestartet:
@@ -73,7 +73,7 @@ Die Services wurden ohne Fehlermeldung erfolgreich gebaut und gestartet – Grun
 | `phpmyadmin` | phpMyAdmin Verwaltungsoberfläche | 8888 → 80 (Web)                |
 | `ftp_server` | FTP-Server (Benutzer: m158ftp)   | 21, 21000–21010 (aktiv/passiv) |
 
-![[/img/docker_ps_alles_funktioniert.png]]
+![alt text](/img/image_385.png)
 
 Diese Übersicht bestätigt den stabilen Zustand der gesamten Infrastruktur.
 
@@ -81,19 +81,19 @@ Diese Übersicht bestätigt den stabilen Zustand der gesamten Infrastruktur.
 
 ### 2.3 Web-, FTP- und Datenbank-Zugriff testen
 
-#### ✅ Test der Apache-Webserver-Konfiguration
+#### Test der Apache-Webserver-Konfiguration
 
 Durch den Aufruf von `http://localhost` im Browser wurde die Datei `index.html` erfolgreich angezeigt.
 
-![[img/infophp_zugriff_funktioniert.png]]
+![alt text](/img/image_386.png)
 
 Die Datei `info.php` (enthält `phpinfo()`) wurde ebenfalls getestet:
 
 `http://localhost/info.php` zeigt alle installierten PHP-Module – **PHP funktioniert korrekt**.
 
-![![localhost Zugriff](img/localhost_zugriff_funktioniert.png)
+![alt text](/img/image_387.png)
 
-#### ✅ Test der phpMyAdmin-Verbindung zur Datenbank
+#### Test der phpMyAdmin-Verbindung zur Datenbank
 
 Der Zugriff auf phpMyAdmin erfolgte über `http://localhost:8888`.
 
@@ -102,10 +102,10 @@ Der Zugriff auf phpMyAdmin erfolgte über `http://localhost:8888`.
 - Verbindung zur Datenbank `wordpress_db` funktionierte erfolgreich
 
 
-![![PhpMyAdmin Zugriff](./img/phpmyadmin_zugriff_funktioniert.png)
+![alt text](/img/image_388.png)
 
 
-#### ✅ Test des FTP-Zugriffs
+#### Test des FTP-Zugriffs
 
 Der FTP-Zugriff wurde mit **FileZilla** erfolgreich getestet:
 
@@ -116,8 +116,7 @@ Der FTP-Zugriff wurde mit **FileZilla** erfolgreich getestet:
 - Erfolgreiche Anzeige der Dateien `index.html` und `info.php` im `html`-Verzeichnis
 
 
-![FTP Zugriff](./img/ftp_zugriff_funktioniert.png)
-
+![alt text](/img/image_390.png)
 
 ## 2.4 Migration lokal erfolgreich gestartet (WordPress)
 
@@ -138,6 +137,9 @@ Dabei wurden folgende Anpassungen gemacht:
 
 Zusätzlich wurde der Zugang zu `http://localhost/wp-login.php` getestet.  
 Die Loginseite von WordPress erschien wie erwartet:
+
+![alt text](/img/localhost_website.png)
+
 ---
 
 ## 3. Migration vorbereiten (Daten)
@@ -158,22 +160,21 @@ liegen nun:
 
 Damit ist die ursprüngliche Website-Version vollständig und sauber dokumentiert verfügbar.
 
-![[Pasted image 20250701121347.png]]
-![[Pasted image 20250701121458.png]]
-
+![alt text](/img/image_391.png)
+![alt text](/img/image_392.png)
 
 ### 3.2 Datenbank importieren
 
 Die Datenbankdatei `wp_m158_db.sql` wurde erfolgreich über die phpMyAdmin-Oberfläche in die Datenbank `wordpress_db` importiert.
 
-![[Pasted image 20250701121723.png]]
+![alt text](/img/image_393.png)
 
 
 Dies wurde über die Benutzeroberfläche unter `http://localhost:8888` durchgeführt.  
 Der Import umfasste **148 SQL-Abfragen**. Die erfolgreiche Ausführung wurde durch phpMyAdmin bestätigt:
 
 
-![[Pasted image 20250701121822.png]]
+![alt text](/img/image_394.png)
 
 ---
 
@@ -197,7 +198,7 @@ Diese Daten entsprechen den Werten aus dem `docker-compose.yml`-File und ermögl
 
 Die Verbindung wird über den internen Containernamen `db` hergestellt, nicht über `localhost`.
 
-![[Pasted image 20250701122727.png]]
+![alt text](/img/image_395.png)
 
 
 
@@ -208,7 +209,7 @@ Die Verbindung wird über den internen Containernamen `db` hergestellt, nicht ü
 
 ### 5.1 Apache wordpress.conf für SSL & Sicherheit
 
-Für den Webserver wurde die Datei apache/wordpress.conf angepasst, um die Anforderungen für die Stufe 3 im Bewertungskriterium Webserver zu erfüllen.
+Für den Webserver habe ich die Datei apache/wordpress.conf angepasst, um die Anforderungen für die Stufe 3 im Bewertungskriterium Webserver zu erfüllen.
 
 Die Konfiguration besteht aus zwei VirtualHost-Blöcken: einer für HTTP, einer für HTTPS.
 
@@ -314,7 +315,7 @@ phpinfo();
 ?>
 ````
 
-![alt text](image-1.png)
+![alt text](/img/image_396.png)
 
 #### Speicherort:
 
@@ -363,7 +364,7 @@ Der Container wurde über Docker Compose mit folgenden Einstellungen eingerichte
 
 Die Verbindung erfolgt abgesichert und eingeschränkt – damit ist das Bewertungskriterium für **Stufe 3 – FTP** vollständig erfüllt.
 
-![[Pasted image 20250701153236.png]]
+![alt text](/img/image_397.png)
 
 ---
 
@@ -435,31 +436,20 @@ find $BACKUP_DIR -type f -mtime +7 -exec rm {} \;
 - Erweiterte Komponentenanzahl für höhere Bewertung
 - Einfache Wiederherstellung durch ZIP/SQL
 
-
-![alt text](image-2.png)
-
+![alt text](/img/backup-sh-erstellt.png)
+![alt text](/img/image_398.png)
 
 -----
 
+![alt text](/img/image_399.png)
 
 
-
-
-
-
-
-
-
-![[Pasted image 20250702110041.png]]
-
-
-
-
+---
 
 ## 9. Migration in die Cloud (AWS)
 
 
-### ☁️ 9.1. AWS EC2-Instanz erstellt und konfiguriert
+### 9.1. AWS EC2-Instanz erstellt und konfiguriert
 
 Für die Bereitstellung der Docker-basierten WordPress-Migration wurde eine neue EC2-Instanz in der AWS-Cloud erstellt.
 
@@ -474,13 +464,12 @@ Die Konfiguration der Instanz erfolgte wie folgt:
 | **Elastic IP (statische IP)**    | `54.145.3.27` – dauerhaft zugewiesen          |
 | **Sicherheitsgruppe (Firewall)** | Neue Security Group mit folgenden Regeln:     |
 
-![[Pasted image 20250701142946.png]]
-
+![alt text](/img/image_400.png)
+![alt text](/img/image_401.png)
 
 ### 9.2 SSH-Zugang getestet
 
-→ Verbindung mit ssh -i vuk-webserver-key.pem ubuntu@...
-
+→ Verbindung mit ssh -i vuk-webserver-key.pem ubuntu@54.145.3.27
 
 ----
 
@@ -490,77 +479,93 @@ Nach dem Starten der EC2-Instanz wurde der Ubuntu-Server über SSH verbunden.
 Anschliessend wurden Docker und Docker Compose mit folgenden Befehlen installiert:
 
 `sudo apt update && sudo apt upgrade -y sudo apt install -y docker.io sudo apt install -y docker-compose`
-![[Pasted image 20250701144801.png]]
-![[Pasted image 20250701144827.png]]
-![[Pasted image 20250701144901.png]]
-
+![alt text](/img/image_402.png)
+![alt text](/img/image_403.png)
+![alt text](/img/image_405.png)
 
 Die Dienste wurden aktiviert und die Versionen überprüft:
 
 `docker --version docker-compose --version`
 
-![[Pasted image 20250701145003.png]]
+![alt text](/img/image_404.png)
 
 
 Zusätzlich wurde der Benutzer `ubuntu` der Docker-Gruppe hinzugefügt, um Docker ohne `sudo` verwenden zu können:
 
 `sudo usermod -aG docker ubuntu`
 
-![[Pasted image 20250701145741.png]]
+![alt text](/img/image_406.png)
 
+## 10. Ordner von Lokalem Rechner auf die EC2 rüber migriern
 
-Diesen Befhel ausgeführt, damit es den Ordnern rèber kopiert auf die Instance:
+Diesen Befhel ausgeführt, damit es den Ordnern rüber kopiert auf die Instance:
 
 `scp -r -i "C:\Users\vukadinl\.ssh\vuk-webserver-key.pem" "C:\Users\vukadinl\OneDrive - NZZ\Dokumente\m158_lb2\docker_compose_wordpress" ubuntu@54.145.3.27:/home/ubuntu/
 
-![[img/migration_ec2.png]]
+![alt text](/img/image_407.png)
 
+## 11. Änderungen in den Files durchführen
+
+### 11.1 - FTP Server
 
 Die IP von der EC2 Instance angegeben bei dem FTP SERVER:
 
-![[img/ftp_umändern_pasvaddress.png]]
+![alt text](/img/image_408.png)
 
+### 11.3 - Phpmyadmin
 
 Unter phpmyadmin habe ich PMA_ABSOLUTE_URI auf  http://54.145.3.27:8888/ geändert:
 
-![[img/phpmyadmin_PMA_ABSOLUTE_URI_geändert 2.png]]
+![alt text](/img/image_409.png)
 
+### 11.4 - Starten des Docker-compose.yaml
 
-Jetzt habe ich die Docker-compose.yaml gestartet:
+Jetzt habe ich alle Änderungen durchgeführt und konnte die Docker-compose.yaml starteten:
 
-![[Pasted image 20250703101551.png]]
+![alt text](/img/image_410.png)
 
-
+### 11.5 Fehlermeldungen
 
 Ich konnte die IP nicht aufrufen deshalb habe ich die rechte gesetzt für den html ordner:
 
-![[img/rechte_setzen_apache.png]]
+![alt text](/img/image_411.png)
+
 
 Jetzt kam diese Medlung diese war Falsch:
 
-![[img/wordpress_meldung.png]]
-
-Das heisst er schafft es nicht die Datenbank zu öffnen nun muss ich prüfen ob es einen inhalt hat in der datenbank. Es hatte keinen inhalt in der wordpress_db. Deshalb musste ich den inhalt mit diesem Befehl herausholen:
+![alt text](/img/image_412.png)
 
 
-![[datenbank_mit_informationen.png]]
+Das heisst das Frontend schafft es nicht die Datenbank zu öffnen nun muss ich prüfen ob es einen inhalt hat in der Datenbank.
+Ich habe gesehen das es keinen inhalt in der wordpress_db hatte. Deshalb musste ich den inhalt mit diesem Befehl herausholen:
 
-
+![alt text](/img/image_413.png)
 
 
 Ja! der inhalt wird nun angezeigt:
 
-![[wordpress_db_wird_angezeigt.png]]
+![alt text](/img/image_414.png)
+
 
 Hier der beweis die seite wurde über die IP der EC2 instance geöffnet:
 
-![[website_ip_funktioniert.png]]
+![alt text](/img/image_415.png)
+
+## 12. Verfeinerungen
+
+### 12.1 Domain erstellen
+
+Da das jetzt alles funktioniert habe ich eine Domain erstellt über die EC2 Elastic IP:
+
+![alt text](/img/image_416.png)
 
 
-Da das jetzt alles funktioniert habe ich eine Domain erstellt:
+### 12.2 Änderungen in der Datenbank 
 
-![[img/domain_erstellt.png]]
+Damit die Website über die Domain erreichbar ist musste ich die alte Domain in der Datenbank ersetzen durch die neue die ich erstellt habe:
 
+![alt text](/img/änderung_sideurl_home_funktioniert.png)
 
-Ich konnte noch nicht
+### 12.3 Testen des Aufrufen der Website über die Domain 
 
+![alt text](/img/erstellte_domain_hat_funktioniert.png)
