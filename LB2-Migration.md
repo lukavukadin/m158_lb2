@@ -615,6 +615,8 @@ Um ein Backup meiner WordPress-Datenbank zu erstellen, habe ich folgenden Befehl
 Das Backup wurde erfolgreich unter dem Pfad backup/wp_m158_db.sql gespeichert.
 Die Datei ist 735 KB gross und enthält die vollständige Datenbankstruktur und Inhalte meiner WordPress-Installation.
 
+![alt text](/img/image_470.png)
+
 ### Zugriff über phpMyAdmin
 
 Zusätzlich wurde der Zugriff über phpMyAdmin erfolgreich eingerichtet. Darüber kann ich die Datenbank auch komfortabel über den Webbrowser verwalten:
