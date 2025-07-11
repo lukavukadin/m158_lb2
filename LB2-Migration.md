@@ -642,7 +642,7 @@ Die Ausgabe zeigt, dass folgende Container aktiv sind:
 | `php_fpm`      | PHP-Prozessor (FPM)          | 9000            |
 
 
-![alt text](image_469.png)
+![alt text](/img/image_469.png)
 
 ---
 
