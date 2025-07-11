@@ -1,4 +1,4 @@
-# 📄 Webserver- und Datenbankbereitstellung auf AWS
+# Webserver- und Datenbankbereitstellung auf AWS
 
 ---
 
@@ -20,8 +20,8 @@
 
 - **Routing-Tabellen** für öffentlich/privat erstellt
 
-<img width="70%" alt="VPC" src= "Screenshot 2025-06-10 121010.png"/>
-<img width="70%" alt="VPC" src= "Screenshot 2025-06-11 162937.png" />
+![alt text](/img/image_471.png)
+![alt text](/img/image_472.png)
 
 ---
 
@@ -42,12 +42,12 @@
     - Port 443 (HTTPS)
 
 
-<img width="100%" alt="VPC" src= "Screenshot 2025-06-10 131224.png" />
-<img width="70%" alt="VPC" src= "Screenshot 2025-06-10 121034 1.png" />
+![alt text](/img/image_473.png)
+![alt text](/img/image_474.png)
 
 ---
 
-## 🔑 SSH-Verbindung & Apache
+## SSH-Verbindung & Apache
 
 **Verbindung:**
 
@@ -63,17 +63,18 @@ sudo apt install apache2 php php-mysql unzip mysql-client
 ```
 
 
-<img width="70%" alt="VPC" src= "Screenshot 2025-06-11 105919 1.png" />
-![[Screenshot 2025-06-11 110037.png]]
+![alt text](/img/image_475.png)
+![alt text](/img/image_476.png)
 
 
 ---
 
-## 🌐 Website-Funktionstest
+## Website-Funktionstest
 
 - `info.php` erstellt unter `/var/www/html/info.php`
 
-![[Screenshot 2025-06-11 110501.png]]
+![alt text](/img/image_477.png)
+
 
 ```php
 <?php phpinfo(); ?>
@@ -81,11 +82,11 @@ sudo apt install apache2 php php-mysql unzip mysql-client
 
 - **Erreichbar über IP:** http://44.223.105.157
 
-![[Screenshot 2025-06-11 110531 1.png]]
+![alt text](/img/image_478.png)
 
 ---
 
-## 📄 Amazon RDS (MySQL-Datenbank)
+## Amazon RDS (MySQL-Datenbank)
 
 - **Engine:** MySQL 8.0.41
     
@@ -95,17 +96,15 @@ sudo apt install apache2 php php-mysql unzip mysql-client
     
 - **Public Access:** Nein (nur intern über VPC erreichbar)
 
-![[Screenshot 2025-06-11 131247.png]]
-![[Screenshot 2025-06-11 133242 1.png]]
+![alt text](/img/image_479.png)
+![alt text](/img/image_480.png)
 
 **Zugriff vom Webserver:**
 
 ```bash
 mysql -h <RDS-ENDPOINT> -u admin -p
 ```
-
-![[Screenshot 2025-06-11 133601.png]]
-
+![alt text](/img/image_481.png)
 
 ---
 
@@ -113,26 +112,26 @@ mysql -h <RDS-ENDPOINT> -u admin -p
 
 - Datenbank erstellt:
 
-![[Screenshot 2025-06-11 133818.png]]
-<img width="20%" alt="" src= "Screenshot 2025-06-11 133837.png" />
+![alt text](/img/image_482.png)
+![alt text](/img/image_483.png)
 
 - Wordpress heruntergeladen:
-![[Screenshot 2025-06-11 133925.png]]
+![alt text](/img/image_484.png)
 
 
-![[Screenshot 2025-06-11 134204.png]]
+![alt text](/img/image_485.png)
 
 
-![[Screenshot 2025-06-11 134437.png]]
-
-
-
-- Wordpress 
-![[Screenshot 2025-06-11 134742.png]]
+![alt text](/img/image_486.png)
 
 
 
-## 📆 FTP-Backup via FileZilla & SCP
+**Wordpress:**
+![alt text](image_487.png)
+
+
+
+## FTP-Backup via FileZilla & SCP
 
 - **FTP-Adresse:** `m158.geekz.ch`
 
@@ -152,11 +151,11 @@ unzip *.zip
 sudo cp -r * /var/www/html/
 ```
 
-![[Screenshot 2025-06-11 135404 2.png]]
+![alt text](/img/image_488.png)
 
 ---
 
-## 🔐 SSL-Konfiguration
+## SSL-Konfiguration
 
 **Ziel:** HTTPS aktivieren (selbstsigniertes Zertifikat)
 
@@ -172,11 +171,9 @@ sudo a2ensite default-ssl.conf
 sudo systemctl restart apache2
 ```
 
-➡️ _Screenshot hinzufügen: HTTPS erfolgreich in Browser_
-
 ---
 
-## 🤖 WordPress-Konfiguration & Fehlerbehandlung
+## WordPress-Konfiguration & Fehlerbehandlung
 
 - **DB importiert:**
     
@@ -205,7 +202,6 @@ SET meta_value = 'a:1:{s:13:"administrator";b:1;}'
 WHERE user_id = 1 AND meta_key = 'wp_capabilities';
 ```
 
-➡️ _Screenshot hinzufügen: MySQL Queries & Loginseite_
 
 ---
 
